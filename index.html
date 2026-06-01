@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Aplikasi Kesehatan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username"><br><br>
+  <input type="password" id="password" placeholder="Password"><br><br>
+  
+  <button onclick="login()">Login</button>
+  <button onclick="showRegister()">Daftar</button>
+
+  <p id="error"></p>
+</div>
+
+<!-- REGISTER -->
+<div id="registerPage" style="display:none;">
+  <h2>Daftar</h2>
+  <input type="text" id="regUsername" placeholder="Username"><br><br>
+  <input type="password" id="regPassword" placeholder="Password"><br><br>
+  <input type="text" id="regNama" placeholder="Nama"><br><br>
+  <input type="text" id="regAlamat" placeholder="Alamat"><br><br>
+  <input type="date" id="regTanggal"><br><br>
+
+  <button onclick="register()">Daftar</button>
+  <button onclick="showLogin()">Kembali</button>
+
+  <p id="regError"></p>
+</div>
+
+<!-- MAIN -->
+<div id="mainPage" style="display:none;">
+  <header>
+    <h1>Aplikasi Kesehatan</h1>
+  </header>
+
+  <nav>
+    <button onclick="showPage('obat')">Obat</button>
+    <button onclick="showPage('penyakit')">Penyakit</button>
+    <button onclick="showPage('tips')">Tips</button>
+    <button onclick="showProfile()">Profil</button>
+    <button onclick="logout()">Logout</button>
+  </nav>
+
+  <div class="content">
+    <input type="text" id="search" placeholder="Cari..." onkeyup="searchAll()">
+    <div id="content"></div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
